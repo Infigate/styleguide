@@ -6,12 +6,14 @@ const H1 = styled.h1<{
   color?: string;
   align?: string;
   padding?: string;
+  background?: string;
 }>`
   font-size: 2.4rem;
   margin: ${(props) => (props.margin ? props.margin : 0)};
-  color: ${(props) => props.color && props.color};
+  color: ${(props) => (props.color ? props.color : '#fff')};
   text-align: ${(props) => props.align && props.align};
   padding: ${(props) => (props.padding ? props.padding : 0)};
+  background: ${(props) => props.background && props.background};
 `;
 
 const H2 = styled.h2<{
@@ -19,12 +21,14 @@ const H2 = styled.h2<{
   color?: string;
   align?: string;
   padding?: string;
+  background?: string;
 }>`
   font-size: 1.8rem;
   margin: ${(props) => (props.margin ? props.margin : 0)};
-  color: ${(props) => props.color && props.color};
+  color: ${(props) => (props.color ? props.color : '#fff')};
   text-align: ${(props) => props.align && props.align};
   padding: ${(props) => (props.padding ? props.padding : 0)};
+  background: ${(props) => props.background && props.background};
 `;
 
 const H3 = styled.h3<{
@@ -32,12 +36,14 @@ const H3 = styled.h3<{
   color?: string;
   align?: string;
   padding?: string;
+  background?: string;
 }>`
   font-size: 1.4rem;
   margin: ${(props) => (props.margin ? props.margin : 0)};
-  color: ${(props) => props.color && props.color};
+  color: ${(props) => (props.color ? props.color : '#fff')};
   text-align: ${(props) => props.align && props.align};
   padding: ${(props) => (props.padding ? props.padding : 0)};
+  background: ${(props) => props.background && props.background};
 `;
 
 const P = styled.p<{
@@ -45,13 +51,15 @@ const P = styled.p<{
   color?: string;
   align?: string;
   padding?: string;
+  background?: string;
 }>`
   font-size: 1rem;
   display: block;
   margin: ${(props) => (props.margin ? props.margin : 0)};
-  color: ${(props) => props.color && props.color};
-  text-align: ${(props) => props.align && props.align};
-  padding: ${(props) => (props.padding ? props.padding : 0)};
+  color: ${(props) => (props.color ? props.color : '#fff')};
+  text-align: ${(props) => (props.align ? props.align : '')};
+  padding: ${(props) => (props.padding ? props.padding : '0')};
+  background: ${(props) => props.background && props.background};
 `;
 
 export interface TypographyProps {
@@ -61,6 +69,7 @@ export interface TypographyProps {
   color?: string;
   align?: string;
   padding?: string;
+  background?: string;
 }
 
 const Typography: React.FC<TypographyProps> = ({
@@ -70,10 +79,17 @@ const Typography: React.FC<TypographyProps> = ({
   color,
   align,
   padding,
+  background,
 }) => {
   if (type === 'h1') {
     return (
-      <H1 margin={margin} color={color} align={align} padding={padding}>
+      <H1
+        margin={margin}
+        color={color}
+        align={align}
+        padding={padding}
+        background={background}
+      >
         {text}
       </H1>
     );
@@ -81,7 +97,13 @@ const Typography: React.FC<TypographyProps> = ({
 
   if (type === 'h2') {
     return (
-      <H2 margin={margin} color={color} align={align} padding={padding}>
+      <H2
+        margin={margin}
+        color={color}
+        align={align}
+        padding={padding}
+        background={background}
+      >
         {text}
       </H2>
     );
@@ -89,7 +111,13 @@ const Typography: React.FC<TypographyProps> = ({
 
   if (type === 'h3') {
     return (
-      <H3 margin={margin} color={color} align={align} padding={padding}>
+      <H3
+        margin={margin}
+        color={color}
+        align={align}
+        padding={padding}
+        background={background}
+      >
         {text}
       </H3>
     );
@@ -97,7 +125,13 @@ const Typography: React.FC<TypographyProps> = ({
 
   if (type === 'p') {
     return (
-      <P margin={margin} color={color} align={align} padding={padding}>
+      <P
+        margin={margin}
+        color={color}
+        align={align}
+        padding={padding}
+        background={background}
+      >
         {text}
       </P>
     );

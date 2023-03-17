@@ -5,11 +5,13 @@ const ImageStyle = styled.img<{
   width?: string;
   height?: string;
   margin?: string;
+  onClick?: () => void;
 }>`
   width: ${(props) => props.width && props.width};
   height: ${(props) => props.height && props.height};
   display: block;
   margin: ${(props) => (props.margin ? props.margin : '0 auto')};
+  ${(props) => props.onClick && 'cursor: pointer;'};
 `;
 
 export interface ImageProps {
@@ -17,6 +19,7 @@ export interface ImageProps {
   width?: string;
   height?: string;
   margin?: string;
+  onClick?: () => void;
 }
 
 export const Image: React.FC<ImageProps> = ({
@@ -24,6 +27,7 @@ export const Image: React.FC<ImageProps> = ({
   width,
   height,
   margin,
+  onClick,
 }) => {
   return (
     <ImageStyle
@@ -31,6 +35,7 @@ export const Image: React.FC<ImageProps> = ({
       width={width}
       height={height}
       margin={margin}
+      onClick={onClick}
     />
   );
 };

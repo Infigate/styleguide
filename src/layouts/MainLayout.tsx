@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Colors } from 'lib/Colors';
+import Colors from 'lib/Colors';
 import Sidebar from 'components/Sidebar';
 
 const Wrapper = styled.div`
@@ -11,8 +11,8 @@ const Wrapper = styled.div`
 
 const Container = styled.div`
   padding: 2rem;
-  background: ${Colors.Background};
-  margin-left: 250px;
+  background: ${Colors('Background')};
+  margin-left: 260px;
   width: 100%;
 `;
 

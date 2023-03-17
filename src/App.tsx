@@ -8,8 +8,12 @@ const App: React.FC = () => {
     <Router>
       <Routes>
         <Route path={PageLink.Top} element={<pages.Top />} />
-        <Route path={PageLink.Pages} element={<pages.Pages />} />
-        <Route path={PageLink.UiUx} element={<pages.UiUx />} />
+        <Route path={PageLink.Pages.index} element={<pages.Pages />} />
+        <Route
+          path={PageLink.Pages.sunset}
+          element={<pages.PagesLoginSunset />}
+        />
+        <Route path={PageLink.Components} element={<pages.Components />} />
         <Route path={PageLink.Login} element={<pages.Login />} />
       </Routes>
     </Router>

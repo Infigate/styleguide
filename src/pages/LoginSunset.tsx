@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import MainLayout from 'layouts/MainLayout';
 import * as Common from 'components/commons/Index';
 
-const Pages: React.FC = () => {
+const LoginSunset: React.FC = () => {
   const navigate = useNavigate();
   return (
     <MainLayout>
@@ -17,11 +17,7 @@ const Pages: React.FC = () => {
           height="300px"
           onClick={() => navigate('/pages/login/sunset')}
         />
-        <Common.Card
-          background="img/gallery/unicorn.png"
-          width="33%"
-          height="300px"
-        />
+
         <Common.Card
           background="img/gallery/unicorn.png"
           width="33%"
@@ -32,4 +28,4 @@ const Pages: React.FC = () => {
   );
 };
 
-export default Pages;
+export default LoginSunset;
