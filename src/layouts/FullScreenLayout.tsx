@@ -22,11 +22,7 @@ export const FullScreenLayout: React.FC<FullScreenLayoutProps> = (
   return (
     <>
       <LinkStyle to={'/pages'}>
-        <Common.Typography
-          text="<< back"
-          type="p"
-          color={Colors('Dark')}
-        ></Common.Typography>
+        <Common.Badge theme="info">back</Common.Badge>
       </LinkStyle>
       <Wrap>{children}</Wrap>
     </>

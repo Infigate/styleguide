@@ -7,7 +7,7 @@ import * as Common from 'components/commons/Index';
 const Pages: React.FC = () => {
   const navigate = useNavigate();
   return (
-    <MainLayout>
+    <MainLayout myKey="pages">
       <Common.Typography type="h1" text="Pages" margin="0 0 2rem 0" />
       <Common.Typography type="h2" text="Login Screen" margin="2rem 0" />
       <Common.HStack gap="1rem" align="center">

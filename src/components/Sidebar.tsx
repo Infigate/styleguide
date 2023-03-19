@@ -1,8 +1,9 @@
 import React from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import Colors from 'lib/Colors';
 import * as Common from 'components/commons/Index';
+import { Link } from 'react-router-dom';
 
 const SidebarWrap = styled.div`
   height: 100vh;
@@ -26,7 +27,7 @@ const Main = styled.div`
   position: relative;
 `;
 
-const ItemWrapper = styled.a<{ active?: boolean }>`
+const ItemWrapper = styled.div<{ active?: boolean }>`
   padding: 0 1rem;
   text-decoration: none;
   color: ${Colors('White')};
@@ -75,6 +76,7 @@ const changeTheme = (theme: string) => {
 
 export const Sidebar: React.FC = () => {
   const location = useLocation();
+  const navigate = useNavigate();
 
   return (
     <SidebarWrap>
@@ -114,19 +116,19 @@ export const Sidebar: React.FC = () => {
               />
               <Common.VStack margin="1rem 0">
                 {subMenuItems.map((item, i) => (
-                  <ItemWrapper
-                    href={item.linkTo}
-                    active={item.linkTo === location.pathname ? true : false}
-                    key={i}
-                  >
-                    <Common.Image
-                      path={item.icon}
-                      width="30px"
-                      height="30px"
-                      margin="0"
-                    />
-                    <p>{item.label}</p>
-                  </ItemWrapper>
+                  <Link to={item.linkTo} key={i}>
+                    <ItemWrapper
+                      active={item.linkTo === location.pathname ? true : false}
+                    >
+                      <Common.Image
+                        path={item.icon}
+                        width="30px"
+                        height="30px"
+                        margin="0"
+                      />
+                      <p>{item.label}</p>
+                    </ItemWrapper>
+                  </Link>
                 ))}
               </Common.VStack>
             </div>

@@ -5,7 +5,7 @@ import Colors from 'lib/Colors';
 
 const Components: React.FC = () => {
   return (
-    <MainLayout>
+    <MainLayout myKey="components">
       <Common.Typography type="h1" text="Components" margin="0 0 2rem 0" />
       <Common.Typography type="h2" text="Typography" margin="2rem 0" />
       <Common.Paper theme="light">
@@ -210,6 +210,22 @@ const Components: React.FC = () => {
         >
           small button
         </Common.Button>
+      </Common.HStack>
+
+      <Common.Typography type="h2" text="Badge" margin="2rem 0" />
+      <Common.HStack gap="1rem" align="center" margin="2rem">
+        <Common.Badge theme="info">info badge</Common.Badge>
+        <Common.Badge theme="success">success Badge</Common.Badge>
+        <Common.Badge theme="warning">warn Badge</Common.Badge>
+        <Common.Badge theme="danger">danger Badge</Common.Badge>
+      </Common.HStack>
+      <Common.HStack gap="1rem" align="center" margin="2rem">
+        <Common.Badge theme="info" size="lg">
+          large Badge
+        </Common.Badge>
+        <Common.Badge theme="info" size="sm">
+          small Badge
+        </Common.Badge>
       </Common.HStack>
     </MainLayout>
   );

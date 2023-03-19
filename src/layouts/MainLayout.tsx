@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import styled from 'styled-components';
 import Colors from 'lib/Colors';
 import Sidebar from 'components/Sidebar';
@@ -16,8 +17,26 @@ const Container = styled.div`
   width: 100%;
 `;
 
+const pageVariants = {
+  initial: {
+    opacity: 0,
+  },
+  in: {
+    opacity: 1,
+  },
+  out: {
+    opacity: 0,
+  },
+};
+
+const pageTransition = {
+  type: 'tween',
+  ease: 'easeInOut',
+};
+
 interface MainLayoutProps {
   children: any;
+  myKey: string;
 }
 
 export const MainLayout: React.FC<MainLayoutProps> = (
@@ -27,7 +46,17 @@ export const MainLayout: React.FC<MainLayoutProps> = (
   return (
     <Wrapper>
       <Sidebar />
-      <Container>{children}</Container>
+      <Container>
+        <motion.div
+          initial="initial"
+          animate="in"
+          exit="out"
+          variants={pageVariants}
+          transition={pageTransition}
+        >
+          {children}
+        </motion.div>
+      </Container>
     </Wrapper>
   );
 };

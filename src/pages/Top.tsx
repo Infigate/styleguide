@@ -8,7 +8,7 @@ const Top: React.FC = () => {
   const navigate = useNavigate();
 
   return (
-    <MainLayout>
+    <MainLayout myKey="top">
       <Common.Typography
         type="h1"
         text="React + TypeScript Style Guide"
@@ -20,6 +20,7 @@ const Top: React.FC = () => {
           background="img/gallery/cat.png"
           width="50%"
           height="300px"
+          onClick={() => navigate('/pages')}
         >
           <Common.Typography
             type="h2"
