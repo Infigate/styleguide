@@ -19,7 +19,7 @@ const Main = styled.div`
       ${Colors('GradationFrom')},
       ${Colors('GradationTo')}
     ),
-    url(${process.env.PUBLIC_URL + 'img/background/sidebar.svg'});
+    url(${process.env.PUBLIC_URL + '/img/background/sidebar.svg'});
   color: #fff;
   background-position: center;
   background-size: cover;
@@ -53,15 +53,15 @@ const subMenuItems: {
   active: boolean;
   linkTo: string;
 }[] = [
-  { icon: 'img/icon/home.svg', label: 'HOME', active: false, linkTo: '/' },
+  { icon: '/img/icon/home.svg', label: 'HOME', active: false, linkTo: '/' },
   {
-    icon: 'img/icon/pages.svg',
+    icon: '/img/icon/pages.svg',
     label: 'Pages',
     active: false,
     linkTo: '/pages',
   },
   {
-    icon: 'img/icon/apps.svg',
+    icon: '/img/icon/apps.svg',
     label: 'Components',
     active: false,
     linkTo: '/components',
@@ -81,21 +81,21 @@ export const Sidebar: React.FC = () => {
       <Common.HStack align="top">
         <Common.VStack>
           <Common.Image
-            path={'img/gallery/theme_default.png'}
+            path={'/img/gallery/theme_default.png'}
             width="30px"
             height="30px"
             margin="0.7rem 0.5rem"
             onClick={() => changeTheme('default')}
           />
           <Common.Image
-            path={'img/gallery/theme_lightblue.png'}
+            path={'/img/gallery/theme_lightblue.png'}
             width="30px"
             height="30px"
             margin="0.7rem 0.5rem"
             onClick={() => changeTheme('lightblue')}
           />
           <Common.Image
-            path={'img/gallery/theme_elegant_night.png'}
+            path={'/img/gallery/theme_elegant_night.png'}
             width="30px"
             height="30px"
             margin="0.7rem 0.5rem"
@@ -107,7 +107,7 @@ export const Sidebar: React.FC = () => {
           <Common.VStack content="space-between" height="100vh">
             <div>
               <Common.Image
-                path={'img/icon/logo.svg'}
+                path={'/img/icon/logo.svg'}
                 width="80px"
                 height="80px"
                 margin="2rem auto"

@@ -67,6 +67,7 @@ type ButtonProps = {
   onClick?: () => void;
   theme?: string;
   size?: string;
+  type?: any;
 };
 
 const ButtonOutline: React.FC<ButtonProps> = ({
@@ -75,10 +76,11 @@ const ButtonOutline: React.FC<ButtonProps> = ({
   onClick,
   theme,
   size,
+  type = 'button',
 }) => {
   return (
     <ButtonElement
-      type="button"
+      type={type}
       theme={theme}
       disabled={disabled}
       onClick={onClick}

@@ -5,6 +5,7 @@ const CardWrapper = styled.div<{
   background?: string;
   width?: string;
   height?: string;
+  padding?: string;
   onClick?: () => void;
 }>`
   border-radius: 1rem;
@@ -13,12 +14,13 @@ const CardWrapper = styled.div<{
   ${(props) =>
     props.background &&
     `
-    background: url(${process.env.PUBLIC_URL + props.background});
+    background: url(${process.env.PUBLIC_URL}${props.background});
     background-size: cover;
     background-position: center;
     `}
   width: ${(props) => (props.width ? props.width : '1.3rem')};
   height: ${(props) => (props.height ? props.height : '0.7rem')};
+  padding: ${(props) => (props.padding ? props.padding : '1rem')};
   ${(props) => props.onClick && 'cursor: pointer;'};
   transition: transform 0.3s ease;
   ${(props) =>
@@ -39,6 +41,7 @@ type CardProps = {
   background?: string;
   width?: string;
   height?: string;
+  padding?: string;
   onClick?: () => void;
 };
 
@@ -47,6 +50,7 @@ const Card: React.FC<CardProps> = ({
   background,
   width,
   height,
+  padding,
   onClick,
 }) => {
   return (
@@ -54,6 +58,7 @@ const Card: React.FC<CardProps> = ({
       background={background}
       width={width}
       height={height}
+      padding={padding}
       onClick={onClick}
     >
       <CardBody>{children}</CardBody>

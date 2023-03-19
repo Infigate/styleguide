@@ -12,18 +12,18 @@ const Pages: React.FC = () => {
       <Common.Typography type="h2" text="Login Screen" margin="2rem 0" />
       <Common.HStack gap="1rem" align="center">
         <Common.Card
-          background="img/gallery/cat.png"
+          background="/img/gallery/cat.png"
           width="33%"
           height="300px"
           onClick={() => navigate('/pages/login/sunset')}
         />
         <Common.Card
-          background="img/gallery/unicorn.png"
+          background="/img/gallery/unicorn.png"
           width="33%"
           height="300px"
         />
         <Common.Card
-          background="img/gallery/unicorn.png"
+          background="/img/gallery/unicorn.png"
           width="33%"
           height="300px"
         />

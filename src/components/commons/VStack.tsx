@@ -5,12 +5,14 @@ const Container = styled.div<{
   margin?: string;
   content?: string;
   height?: string;
+  gap?: string;
 }>`
   display: flex;
   flex-flow: column;
   height: ${(props) => props.height && props.height};
   justify-content: ${(props) => props.content && props.content};
   margin: ${(props) => (props.margin ? props.margin : 0)};
+  gap: ${(props) => props.gap && props.gap};
 `;
 
 export interface VStackProps {
@@ -18,6 +20,7 @@ export interface VStackProps {
   margin?: string;
   content?: string;
   height?: string;
+  gap?: string;
 }
 
 const Vstack: React.FC<VStackProps> = ({
@@ -25,9 +28,10 @@ const Vstack: React.FC<VStackProps> = ({
   margin,
   content,
   height,
+  gap,
 }) => {
   return (
-    <Container margin={margin} content={content} height={height}>
+    <Container margin={margin} content={content} height={height} gap={gap}>
       {children}
     </Container>
   );
