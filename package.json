@@ -18,6 +18,7 @@
     "eslint": "^8.36.0",
     "eslint-config-prettier": "^8.7.0",
     "framer-motion": "^10.6.0",
+    "gh-pages": "^5.0.0",
     "prettier": "^2.8.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -31,7 +32,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
