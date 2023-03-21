@@ -74,6 +74,12 @@ const subMenuItems: {
     active: false,
     linkTo: `${URL}/components`,
   },
+  {
+    icon: '/img/icon/form.svg',
+    label: 'Forms',
+    active: false,
+    linkTo: `${URL}/forms`,
+  },
 ];
 
 const changeTheme = (theme: string) => {

@@ -18,10 +18,11 @@ interface FullScreenLayoutProps {
 export const FullScreenLayout: React.FC<FullScreenLayoutProps> = (
   props: FullScreenLayoutProps
 ) => {
+  const URL = process.env.PUBLIC_URL;
   const { children } = props;
   return (
     <>
-      <LinkStyle to={'/pages'}>
+      <LinkStyle to={`${URL}/pages`}>
         <Common.VStack padding="1rem">
           <Common.Badge theme="info">back</Common.Badge>
         </Common.VStack>

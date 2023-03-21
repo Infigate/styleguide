@@ -6,4 +6,5 @@ export const PageLink = {
     index: '/pages',
     sunset: '/pages/login/sunset',
   },
+  Forms: '/forms',
 };

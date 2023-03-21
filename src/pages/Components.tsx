@@ -233,6 +233,28 @@ const Components: React.FC = () => {
           small Badge
         </Common.Badge>
       </Common.HStack>
+
+      <Common.Typography type="h2" text="Card" margin="2rem 0" />
+      <Common.HStack gap="1rem" align="center" margin="2rem">
+        <Common.Card
+          background="/img/gallery/cat_with_hat.png"
+          width="50%"
+          height="300px"
+        />
+        <Common.Card
+          background="/img/gallery/cat_with_hat.png"
+          width="50%"
+          height="300px"
+        >
+          <Common.Typography
+            type="h2"
+            text="your text here"
+            margin="6rem 2rem"
+            color={Colors('White')}
+            align="center"
+          />
+        </Common.Card>
+      </Common.HStack>
     </MainLayout>
   );
 };

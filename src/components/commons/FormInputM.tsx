@@ -8,11 +8,11 @@ type FormData = {
 
 type Props = {
   label: string;
-  type: string;
-  control: Control<FormData>;
-  name: 'email' | 'password';
+  type?: string;
+  control: Control<any>;
+  name: string;
   rules: Record<string, unknown>;
-  errors: FieldErrors<FormData>;
+  errors: FieldErrors<FormData> | any;
 };
 
 const FormInputM: React.FC<Props> = ({

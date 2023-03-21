@@ -10,12 +10,11 @@ const Container = styled.div<{
   ${({ theme }) =>
     theme === 'light' &&
     `
-  background: ${Colors('White')};
-  color: #fff;
-  &:hover {
-    background: ${Colors('White')};
-  }
-  `}
+      background: ${Colors('White')};
+      &:hover {
+        background: ${Colors('White')};
+      }
+    `}
   box-shadow: 0px 5px 15px 0px #555;
   margin: ${(props) => (props.margin ? props.margin : 0)};
   padding: ${(props) => (props.padding ? props.padding : 0)};

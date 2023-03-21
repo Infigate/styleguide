@@ -17,6 +17,7 @@ const AnimateRoutes: React.FC = () => {
         <Routes location={location} key={location.pathname}>
           <Route path={URL + PageLink.Top} element={<pages.Top />} />
           <Route path={URL + PageLink.Pages.index} element={<pages.Pages />} />
+          <Route path={URL + PageLink.Forms} element={<pages.Forms />} />
           <Route
             path={URL + PageLink.Pages.sunset}
             element={<pages.PagesLoginSunset />}
