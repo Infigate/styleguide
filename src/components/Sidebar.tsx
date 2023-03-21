@@ -5,6 +5,8 @@ import Colors from 'lib/Colors';
 import * as Common from 'components/commons/Index';
 import { Link } from 'react-router-dom';
 
+const URL = process.env.PUBLIC_URL;
+
 const SidebarWrap = styled.div`
   height: 100vh;
   width: 260px;
@@ -54,18 +56,23 @@ const subMenuItems: {
   active: boolean;
   linkTo: string;
 }[] = [
-  { icon: '/img/icon/home.svg', label: 'HOME', active: false, linkTo: '/' },
+  {
+    icon: '/img/icon/home.svg',
+    label: 'HOME',
+    active: false,
+    linkTo: `${URL}`,
+  },
   {
     icon: '/img/icon/pages.svg',
     label: 'Pages',
     active: false,
-    linkTo: '/pages',
+    linkTo: `${URL}/pages`,
   },
   {
     icon: '/img/icon/apps.svg',
     label: 'Components',
     active: false,
-    linkTo: '/components',
+    linkTo: `${URL}/components`,
   },
 ];
 

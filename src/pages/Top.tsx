@@ -6,7 +6,7 @@ import Colors from 'lib/Colors';
 
 const Top: React.FC = () => {
   const navigate = useNavigate();
-
+  const URL = process.env.PUBLIC_URL;
   return (
     <MainLayout myKey="top">
       <Common.Typography
@@ -17,10 +17,10 @@ const Top: React.FC = () => {
       />
       <Common.HStack gap="1rem" align="center">
         <Common.Card
-          background="img/gallery/cat.png"
+          background="/img/gallery/cat.png"
           width="50%"
           height="300px"
-          onClick={() => navigate('/pages')}
+          onClick={() => navigate(`${URL}/pages`)}
         >
           <Common.Typography
             type="h2"
@@ -31,10 +31,10 @@ const Top: React.FC = () => {
           />
         </Common.Card>
         <Common.Card
-          background="img/gallery/unicorn.png"
+          background="/img/gallery/unicorn.png"
           width="50%"
           height="300px"
-          onClick={() => navigate('/components')}
+          onClick={() => navigate(`${URL}/components`)}
         >
           <Common.Typography
             type="h2"

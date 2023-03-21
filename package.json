@@ -1,5 +1,6 @@
 {
   "name": "infigate",
+  "homepage": "https://infigate.github.io/styleguide",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -15,6 +16,7 @@
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
     "@types/react-router-dom": "^5.3.3",
+    "cross-env": "^7.0.3",
     "eslint": "^8.36.0",
     "eslint-config-prettier": "^8.7.0",
     "framer-motion": "^10.6.0",
@@ -30,10 +32,11 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "cross-env react-scripts start",
+    "build": "cross-env react-scripts build",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
+    "postbuild": "cp build/index.html build/404.html",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {

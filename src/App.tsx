@@ -4,7 +4,7 @@ import AnimateRoutes from 'AnimateRoutes';
 
 const App: React.FC = () => {
   return (
-    <Router basename="/">
+    <Router>
       <AnimateRoutes />
     </Router>
   );

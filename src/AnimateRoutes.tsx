@@ -8,20 +8,25 @@ import { AnimatePresence } from 'framer-motion';
 
 const AnimateRoutes: React.FC = () => {
   const location = useLocation();
+  const URL = process.env.PUBLIC_URL;
 
   return (
     <SnackBarContextProvider>
       <Common.SnackBarWrapper />
       <AnimatePresence>
         <Routes location={location} key={location.pathname}>
-          <Route path={PageLink.Top} element={<pages.Top />} />
-          <Route path={PageLink.Pages.index} element={<pages.Pages />} />
+          <Route path={URL + PageLink.Top} element={<pages.Top />} />
+          <Route path={URL + PageLink.Pages.index} element={<pages.Pages />} />
           <Route
-            path={PageLink.Pages.sunset}
+            path={URL + PageLink.Pages.sunset}
             element={<pages.PagesLoginSunset />}
           />
-          <Route path={PageLink.Components} element={<pages.Components />} />
-          <Route path={PageLink.Login} element={<pages.Login />} />
+          <Route
+            path={URL + PageLink.Components}
+            element={<pages.Components />}
+          />
+          <Route path={URL + PageLink.Login} element={<pages.Login />} />
+          <Route path="*" element={<pages.Top />} />
         </Routes>
       </AnimatePresence>
     </SnackBarContextProvider>
