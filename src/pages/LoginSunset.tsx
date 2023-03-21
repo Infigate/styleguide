@@ -41,7 +41,12 @@ const LoginSunset: React.FC = () => {
   return (
     <FullScreenLayout>
       <Wrapper>
-        <Common.Card width="350px" height="350px" padding="2rem">
+        <Common.Card
+          width="350px"
+          height="350px"
+          padding="2rem"
+          css="backdrop-filter: blur(5px);"
+        >
           <form onSubmit={handleSubmit(onSubmit)}>
             <Common.VStack gap="1rem" content="space-between" height="300px">
               <>

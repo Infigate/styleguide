@@ -7,6 +7,7 @@ const CardWrapper = styled.div<{
   height?: string;
   padding?: string;
   onClick?: () => void;
+  css?: string;
 }>`
   border-radius: 1rem;
   box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.3);
@@ -30,6 +31,11 @@ const CardWrapper = styled.div<{
       transform: scale(1.01);
     }
   `};
+  ${(props) =>
+    props.css &&
+    `
+    ${props.css}
+  `};
 `;
 
 const CardBody = styled.div`
@@ -43,6 +49,7 @@ type CardProps = {
   height?: string;
   padding?: string;
   onClick?: () => void;
+  css?: string;
 };
 
 const Card: React.FC<CardProps> = ({
@@ -52,6 +59,7 @@ const Card: React.FC<CardProps> = ({
   height,
   padding,
   onClick,
+  css,
 }) => {
   return (
     <CardWrapper
@@ -60,6 +68,7 @@ const Card: React.FC<CardProps> = ({
       height={height}
       padding={padding}
       onClick={onClick}
+      css={css}
     >
       <CardBody>{children}</CardBody>
     </CardWrapper>
