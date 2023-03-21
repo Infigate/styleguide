@@ -70,6 +70,7 @@ type ButtonProps = {
   onClick?: () => void;
   theme?: string;
   size?: string;
+  type?: any;
 };
 
 const Button: React.FC<ButtonProps> = ({
@@ -78,10 +79,11 @@ const Button: React.FC<ButtonProps> = ({
   onClick,
   theme,
   size,
+  type = 'button',
 }) => {
   return (
     <ButtonElement
-      type="button"
+      type={type}
       theme={theme}
       disabled={disabled}
       onClick={onClick}

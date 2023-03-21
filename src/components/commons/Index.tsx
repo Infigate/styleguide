@@ -11,8 +11,6 @@ import ButtonClear from 'components/commons/ButtonClear';
 import Badge from 'components/commons/Badge';
 import Paper from 'components/commons/Paper';
 import FormInput from 'components/commons/FormInput';
-import FormInputMUI from 'components/commons/FormInputMUI';
-import FormInputM from 'components/commons/FormInputM';
 import { SnackBarWrapper } from 'components/commons/SnackBarWrapper';
 
 export {
@@ -29,7 +27,5 @@ export {
   ButtonClear,
   Paper,
   FormInput,
-  FormInputMUI,
-  FormInputM,
   SnackBarWrapper,
 };

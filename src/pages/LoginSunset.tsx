@@ -50,7 +50,7 @@ const LoginSunset: React.FC = () => {
           <form onSubmit={handleSubmit(onSubmit)}>
             <Common.VStack gap="1rem" content="space-between" height="300px">
               <>
-                <Common.FormInputM
+                <Common.FormInput
                   label="Email"
                   type="email"
                   control={control}
@@ -58,7 +58,7 @@ const LoginSunset: React.FC = () => {
                   rules={{ required: true }}
                   errors={errors}
                 />
-                <Common.FormInputM
+                <Common.FormInput
                   label="Password"
                   type="password"
                   control={control}
@@ -67,12 +67,7 @@ const LoginSunset: React.FC = () => {
                   errors={errors}
                 />
               </>
-              <Common.ButtonClear
-                type="submit"
-                onClick={handleSubmit(onSubmit)}
-              >
-                ログイン
-              </Common.ButtonClear>
+              <Common.ButtonClear type="submit">ログイン</Common.ButtonClear>
             </Common.VStack>
           </form>
         </Common.Card>

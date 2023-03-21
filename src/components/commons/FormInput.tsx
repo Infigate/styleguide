@@ -1,108 +1,64 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
-import Colors from 'lib/Colors';
-import * as Common from './Index';
+import { TextField } from '@mui/material';
+import { Control, FieldErrors, Controller } from 'react-hook-form';
 
-const Container = styled.div`
-  display: flex;
-`;
-
-const InputElement = styled.input<{
-  margin?: string;
-  padding?: string;
-  error?: string;
-}>`
-  width: ${(props) => props.width && props.width};
-  background: rgb(240 240 240 / 20%);
-  border: 1px solid rgb(0 0 0 / 0%);
-  border-radius: 10px;
-  margin: ${(props) => (props.margin ? props.margin : 0)};
-  padding: ${(props) => (props.padding ? props.padding : '0.9em 0.5em')};
-  font-weight: 400;
-  ::placeholder {
-    color: #eee;
-  }
-  ${(props) => (props.error ? `border: 1px solid ${Colors('Primary')};` : '')}
-`;
-
-const Wrapper = styled.div`
-  display: inline-block;
-  position: relative;
-`;
-
-const ButtonElement = styled.div`
-  content: '';
-  background: url(${process.env.PUBLIC_URL}/img/icons/eye.svg);
-  background-repeat: no-repeat;
-  position: absolute;
-  background-size: 19px;
-  width: 18px;
-  height: 18px;
-  right: 1rem;
-  top: 2rem;
-  cursor: pointer;
-`;
-
-const ErrorMessage = styled.div`
-  margin-top: 0.25rem;
-  margin-bottom: 0.5rem;
-  font-weight: 700;
-  font-size: 12px;
-  color: ${Colors('Primary')};
-  word-break: keep-all;
-  white-space: nowrap;
-`;
-
-type FormInputProps = {
-  label: string;
-  error?: string;
-  register?: object;
-  width?: string;
-  margin?: string;
-  padding?: string;
-  type?: string;
-  icon?: string;
+type FormData = {
+  email: string;
+  password: string;
 };
 
-export const FormInput: React.FC<FormInputProps> = (props) => {
-  const [showForm, setShowForm] = useState(true);
+type Props = {
+  label: string;
+  type?: string;
+  control: Control<any>;
+  name: string;
+  rules: Record<string, unknown>;
+  errors: FieldErrors<FormData> | any;
+};
 
-  const toggleShowForm = () => {
-    setShowForm(!showForm);
-  };
+const messages: any = {
+  required: 'この項目は必須です',
+  minLength: '必要な入力文字数に達していません',
+  maxLength: '入力可能文字数を超えています',
+};
 
-  const {
-    label,
-    error,
-    register,
-    width,
-    margin,
-    padding,
-    type,
-    icon,
-    ...rest
-  } = props;
+const FormInput: React.FC<Props> = ({
+  label,
+  type,
+  control,
+  name,
+  rules,
+  errors,
+}) => {
+  console.log(errors[name]);
 
   return (
-    <Container>
-      <Common.VStack>
-        <Wrapper>
-          <InputElement
-            {...register}
-            {...rest}
-            error={error}
-            width={width}
-            margin={margin}
-            padding={padding}
-            type={
-              type === 'password' ? (showForm ? 'password' : 'text') : 'text'
-            }
-          />
-          {type === 'password' && <ButtonElement onClick={toggleShowForm} />}
-        </Wrapper>
-        {error && <ErrorMessage>success</ErrorMessage>}
-      </Common.VStack>
-    </Container>
+    <Controller
+      name={name}
+      control={control}
+      rules={rules}
+      render={({ field }) => (
+        <TextField
+          InputLabelProps={{ shrink: true }}
+          label={label}
+          type={type}
+          variant="outlined"
+          fullWidth
+          error={!!errors[name]}
+          helperText={errors[name] ? messages[errors[name].type] : null}
+          sx={{
+            background: 'transparent',
+            backgroundColor: 'transparent',
+            '&:hover': {
+              backgroundColor: 'rgba(255, 255, 255, 0.1)',
+            },
+          }}
+          inputProps={{
+            autoComplete: 'current-password',
+          }}
+          {...field}
+        />
+      )}
+    />
   );
 };
 
