@@ -11,7 +11,7 @@ const Top: React.FC = () => {
     <MainLayout myKey="top">
       <Common.Typography
         type="h1"
-        text="React + TypeScript Style Guide"
+        text="React + TypeScript Style Catalog"
         margin="0 0 2rem 0"
         color={Colors('White')}
       />
@@ -31,7 +31,7 @@ const Top: React.FC = () => {
           />
         </Common.Card>
         <Common.Card
-          background="/img/gallery/unicorn.png"
+          background="/img/gallery/cat_with_hat.png"
           width="50%"
           height="300px"
           onClick={() => navigate(`${URL}/components`)}

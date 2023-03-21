@@ -22,6 +22,7 @@ export enum Colors {
   White = '#fff',
   Gray = '#ddd',
   Dark = '#222',
+  Trance = '#ffffff59',
 }
 
 export enum LightBlue {
@@ -36,6 +37,7 @@ export enum LightBlue {
   White = '#fff',
   Gray = '#ddd',
   Dark = '#296f95',
+  Trance = '#ffffff59',
 }
 
 export enum ElegantNight {
@@ -50,6 +52,7 @@ export enum ElegantNight {
   White = '#fff',
   Gray = '#293241',
   Dark = '#111',
+  Trance = '#ffffff59',
 }
 
 export default themes;

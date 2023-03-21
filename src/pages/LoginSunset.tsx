@@ -62,13 +62,12 @@ const LoginSunset: React.FC = () => {
                   errors={errors}
                 />
               </>
-              <Common.ButtonOutline
+              <Common.ButtonClear
                 type="submit"
                 onClick={handleSubmit(onSubmit)}
-                theme="info"
               >
                 ログイン
-              </Common.ButtonOutline>
+              </Common.ButtonClear>
             </Common.VStack>
           </form>
         </Common.Card>

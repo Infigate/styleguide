@@ -113,6 +113,23 @@ const Components: React.FC = () => {
         </Common.Button>
       </Common.HStack>
 
+      <Common.HStack gap="1rem" align="center" margin="2rem">
+        <Common.Button
+          theme="info"
+          size="lg"
+          onClick={() => console.log('clicked')}
+        >
+          large button
+        </Common.Button>
+        <Common.Button
+          theme="success"
+          size="sm"
+          onClick={() => console.log('clicked')}
+        >
+          small button
+        </Common.Button>
+      </Common.HStack>
+
       <Common.Typography type="h3" text="Gradation Button" margin="2rem 0" />
       <Common.HStack gap="1rem" align="center" margin="2rem">
         <Common.ButtonGradate
@@ -194,22 +211,11 @@ const Components: React.FC = () => {
         </Common.ButtonShine>
       </Common.HStack>
 
-      <Common.Typography type="h3" text="size props" margin="2rem 0" />
+      <Common.Typography type="h3" text="Clear Button" margin="2rem 0" />
       <Common.HStack gap="1rem" align="center" margin="2rem">
-        <Common.Button
-          theme="info"
-          size="lg"
-          onClick={() => console.log('clicked')}
-        >
-          large button
-        </Common.Button>
-        <Common.Button
-          theme="success"
-          size="sm"
-          onClick={() => console.log('clicked')}
-        >
-          small button
-        </Common.Button>
+        <Common.ButtonClear onClick={() => console.log('clicked')}>
+          clear button
+        </Common.ButtonClear>
       </Common.HStack>
 
       <Common.Typography type="h2" text="Badge" margin="2rem 0" />
