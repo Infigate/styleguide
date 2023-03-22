@@ -13,6 +13,7 @@ type Props = {
   name: string;
   rules: Record<string, unknown>;
   errors: FieldErrors<FormData> | any;
+  variant?: 'outlined' | 'standard' | 'filled' | undefined;
 };
 
 const messages: any = {
@@ -28,6 +29,7 @@ const FormInput: React.FC<Props> = ({
   name,
   rules,
   errors,
+  variant = 'outlined',
 }) => {
   console.log(errors[name]);
 
@@ -41,7 +43,7 @@ const FormInput: React.FC<Props> = ({
           InputLabelProps={{ shrink: true }}
           label={label}
           type={type}
-          variant="outlined"
+          variant={variant}
           fullWidth
           error={!!errors[name]}
           helperText={errors[name] ? messages[errors[name].type] : null}

@@ -15,6 +15,14 @@ const Container = styled.div<{
         background: ${Colors('White')};
       }
     `}
+  ${({ theme }) =>
+    theme === 'dark' &&
+    `
+      background: ${Colors('Dark')};
+      &:hover {
+        background: ${Colors('Dark')};
+      }
+    `}
   box-shadow: 0px 5px 15px 0px #555;
   margin: ${(props) => (props.margin ? props.margin : 0)};
   padding: ${(props) => (props.padding ? props.padding : 0)};

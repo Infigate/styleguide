@@ -11,6 +11,8 @@ import ButtonClear from 'components/commons/ButtonClear';
 import Badge from 'components/commons/Badge';
 import Paper from 'components/commons/Paper';
 import FormInput from 'components/commons/FormInput';
+import FormCheckBox from 'components/commons/FormCheckBox';
+import FormSelect from 'components/commons/FormSelect';
 import { SnackBarWrapper } from 'components/commons/SnackBarWrapper';
 
 export {
@@ -27,5 +29,7 @@ export {
   ButtonClear,
   Paper,
   FormInput,
+  FormCheckBox,
+  FormSelect,
   SnackBarWrapper,
 };

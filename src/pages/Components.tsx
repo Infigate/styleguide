@@ -255,6 +255,12 @@ const Components: React.FC = () => {
           />
         </Common.Card>
       </Common.HStack>
+
+      <Common.Typography type="h2" text="Paper" margin="2rem 0" />
+      <Common.HStack gap="1rem" align="center" margin="2rem">
+        <Common.Paper theme="light">light paper</Common.Paper>
+        <Common.Paper theme="dark">dark paper</Common.Paper>
+      </Common.HStack>
     </MainLayout>
   );
 };
