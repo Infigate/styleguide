@@ -7,7 +7,7 @@ import * as Common from 'components/commons/Index';
 type FormValues = {
   email?: string;
   name?: string;
-  age?: number;
+  age?: string;
 };
 
 const Forms: React.FC = () => {
@@ -22,6 +22,7 @@ const Forms: React.FC = () => {
     defaultValues: {
       email: '',
       name: '',
+      age: '',
     },
   });
 
@@ -118,7 +119,6 @@ const Forms: React.FC = () => {
                 label="利用規約に同意します"
                 control={control}
                 name="terms"
-                rules={{ required: true }}
               />
             </Common.HStack>
           </Common.VStack>
@@ -131,11 +131,24 @@ const Forms: React.FC = () => {
           <Common.VStack gap="2rem">
             <Common.HStack gap="2rem">
               <Common.FormSelect
-                label="Age"
-                name="age"
                 control={control}
-                rules={{ required: true }}
-                register={register}
+                name="age"
+                label="Age"
+                options={[
+                  { value: '10', label: 'Ten' },
+                  { value: '20', label: 'Twenty' },
+                  { value: '30', label: 'Thirty' },
+                ]}
+              />
+              <Common.FormSelect
+                control={control}
+                name="age"
+                label="Age"
+                options={[
+                  { value: '10', label: 'Ten' },
+                  { value: '20', label: 'Twenty' },
+                  { value: '30', label: 'Thirty' },
+                ]}
               />
             </Common.HStack>
           </Common.VStack>

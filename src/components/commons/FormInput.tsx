@@ -31,8 +31,6 @@ const FormInput: React.FC<Props> = ({
   errors,
   variant = 'outlined',
 }) => {
-  console.log(errors[name]);
-
   return (
     <Controller
       name={name}
